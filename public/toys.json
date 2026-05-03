@@ -1,0 +1,74 @@
+[
+  {
+    "toyId": 1,
+    "toyName": "Lego Classic Creative Box",
+    "sellerName": "Toy World BD",
+    "sellerEmail": "toyworld@gmail.com",
+    "price": 49.99,
+    "rating": 4.8,
+    "availableQuantity": 120,
+    "subCategory": "Building Blocks",
+    "picture": "https://i.ibb.co.com/fd0RdvTT/classiclego.avif",
+    "description": "The Lego Classic Creative Box is a timeless building toy set designed to inspire creativity and imagination in children of all ages. With a wide variety of colorful bricks in different shapes and sizes, kids can build anything they can imagine, from houses and vehicles to animals and abstract designs. This toy promotes problem-solving skills, spatial awareness, and fine motor development. It is perfect for both solo play and collaborative activities, encouraging teamwork and communication among children. The durable plastic construction ensures long-lasting use, making it a great investment for parents. Whether your child is a beginner or an experienced builder, this Lego set provides endless possibilities for fun and learning. It also includes idea guides to help spark creativity and give children a starting point for their creations."
+  },
+  {
+    "toyId": 2,
+    "toyName": "Remote Control Racing Car",
+    "sellerName": "Speed Toys",
+    "sellerEmail": "speedtoys@gmail.com",
+    "price": 35.5,
+    "rating": 5,
+    "availableQuantity": 80,
+    "subCategory": "Vehicles",
+    "picture": "https://i.ibb.co.com/qLGzDYjq/toycar.jpg",
+    "description": "The Remote Control Racing Car is an exciting toy designed for kids who love speed and adventure. Equipped with a powerful motor and responsive controls, this car can move forward, backward, and turn with precision, providing a thrilling driving experience. Its durable build allows it to handle rough surfaces, making it suitable for both indoor and outdoor play. The sleek design and vibrant colors make it visually appealing, while the easy-to-use remote ensures that children of all ages can enjoy it without difficulty. Playing with this car helps improve hand-eye coordination, reaction time, and motor skills. It also encourages outdoor activity and active play, which is essential for a healthy lifestyle. Whether racing with friends or exploring different terrains, this remote control car guarantees hours of fun and excitement."
+  },
+  {
+    "toyId": 3,
+    "toyName": "Dinosaur Adventure Play Set",
+    "sellerName": "Jurassic Toys",
+    "sellerEmail": "jurassic@gmail.com",
+    "price": 29.99,
+    "rating": 4.7,
+    "availableQuantity": 60,
+    "subCategory": "Action Figures",
+    "picture": "https://i.ibb.co.com/TqHfz61M/dianosaur.webp",
+    "description": "The Dinosaur Adventure Play Set brings prehistoric fun to life with a collection of realistic dinosaur figures and accessories. Children can explore the world of dinosaurs, create their own stories, and engage in imaginative play. Each dinosaur is carefully designed with detailed textures and vibrant colors, making them both educational and entertaining. This play set helps children learn about different species of dinosaurs while developing their creativity and storytelling skills. It is perfect for both individual play and group activities, encouraging social interaction and cooperation. The durable materials ensure that the toys can withstand rough handling, making them suitable for active kids. Whether recreating scenes from movies or inventing new adventures, this dinosaur play set provides endless entertainment and learning opportunities for young explorers."
+  },
+  {
+    "toyId": 4,
+    "toyName": "Kids Kitchen Cooking Set",
+    "sellerName": "Little Chef Store",
+    "sellerEmail": "chefstore@gmail.com",
+    "price": 42.0,
+    "rating": 4.5,
+    "availableQuantity": 50,
+    "subCategory": "Pretend Play",
+    "picture": "https://i.ibb.co.com/Kp67L0DJ/kidkitchen.webp",
+    "description": "The Kids Kitchen Cooking Set is a wonderful pretend play toy that allows children to explore their culinary creativity. This set includes miniature kitchen utensils, pots, pans, and play food items that mimic real-life cooking tools. It encourages imaginative play, helping children develop social skills and role-playing abilities as they pretend to cook meals for family and friends. The bright colors and realistic design make the experience even more engaging. This toy also helps children understand basic kitchen concepts and improves their hand-eye coordination and motor skills. Made from safe and durable materials, it ensures a worry-free playtime for parents. Whether playing alone or with friends, this kitchen set offers endless opportunities for fun, creativity, and learning, making it a perfect addition to any child’s toy collection."
+  },
+  {
+    "toyId": 5,
+    "toyName": "Educational Alphabet Puzzle",
+    "sellerName": "Smart Kids BD",
+    "sellerEmail": "smartkids@gmail.com",
+    "price": 19.99,
+    "rating": 4.9,
+    "availableQuantity": 100,
+    "subCategory": "Educational Toys",
+    "picture": "https://i.ibb.co.com/rR3x8Vj5/legotrain.png",
+    "description": "The Educational Alphabet Puzzle is a fun and interactive way for young children to learn the alphabet. Each letter is designed as a colorful puzzle piece that fits into a corresponding slot, helping kids recognize letters and improve their cognitive skills. This toy promotes early literacy development, hand-eye coordination, and problem-solving abilities. It is made from high-quality, child-safe materials that ensure durability and safety during play. The vibrant colors and engaging design capture children’s attention, making learning enjoyable and effective. Parents can use this puzzle as a teaching tool to introduce letters, sounds, and basic words. It is suitable for both home and classroom use, providing a solid foundation for early education. With this alphabet puzzle, learning becomes a playful and rewarding experience for children."
+  },
+  {
+    "toyId": 6,
+    "toyName": "Plush Teddy Bear Double",
+    "sellerName": "Soft Toys House",
+    "sellerEmail": "softtoys@gmail.com",
+    "price": 25.0,
+    "rating": 4.8,
+    "availableQuantity": 90,
+    "subCategory": "Soft Toys",
+    "picture": "https://i.ibb.co.com/CKvwQC5t/teddybear.jpg",
+    "description": "The Plush Teddy Bear is a soft and cuddly companion that brings comfort and joy to children. Made from high-quality, ultra-soft fabric, this teddy bear is perfect for hugging, playing, and even sleeping. Its adorable design and friendly expression make it an instant favorite among kids. This toy helps provide emotional comfort, especially for younger children, and can be a great companion during bedtime or travel. It also encourages imaginative play as children create stories and adventures with their teddy bear. The durable stitching ensures that it can withstand daily use while maintaining its softness and shape. Easy to clean and safe for children, this plush toy is a thoughtful gift for birthdays, holidays, or any special occasion. It is more than just a toy; it becomes a cherished friend."
+  }
+]
