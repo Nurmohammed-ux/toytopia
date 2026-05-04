@@ -1,9 +1,11 @@
 import { Link, NavLink } from "react-router";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { AuthContext } from "../../context/AuthContext";
+import Swal from "sweetalert2";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
-  // Common link styles to keep the code clean
+  const { user, logOut } = useContext(AuthContext);
   const navLinks = (
     <>
       <li>
@@ -28,6 +30,27 @@ const Navbar = () => {
       </li>
     </>
   );
+
+  const handleLogout = () => {
+    logOut()
+      .then(() => {
+        Swal.fire({
+          icon: "success",
+          title: "Successfully Log Out!",
+          text: `Hope you will back to ToyTopia!`,
+          showConfirmButton: false,
+          timer: 2000,
+        });
+      })
+      .catch((error) => {
+        Swal.fire({
+          icon: "error",
+          title: "Registration Failed",
+          text: error.message,
+          confirmButtonColor: "#ff4d4d",
+        });
+      });
+  };
 
   return (
     <nav className="w-full bg-white shadow-md px-4 md:px-10 py-4">
@@ -55,12 +78,21 @@ const Navbar = () => {
 
         {/* RIGHT BUTTONS */}
         <div className="flex items-center gap-4">
-          <Link
-            to="/login"
-            className="hover:bg-[#ff4d4d] hover:border-[#ff4d4d] px-4 py-2 border border-gray-300 font-semibold rounded transition"
-          >
-            Login
-          </Link>
+          {user ? (
+            <button
+              onClick={handleLogout}
+              className="hover:bg-[#ff4d4d] hover:border-[#ff4d4d] px-4 py-2 border border-gray-300 font-semibold rounded transition"
+            >
+              Log Out
+            </button>
+          ) : (
+            <Link
+              to="/auth/login"
+              className="hover:bg-[#ff4d4d] hover:border-[#ff4d4d] px-4 py-2 border border-gray-300 font-semibold rounded transition"
+            >
+              Login
+            </Link>
+          )}
         </div>
       </div>
 

@@ -21,13 +21,13 @@ const Home = () => {
   return (
     <div>
       {/* 🔥 HERO SLIDER */}
-      <div className="relative h-[400px] md:h-[500px] lg:h-[700px] overflow-hidden">
+      <div className="relative h-100 md:h-125 lg:h-175 overflow-hidden">
         {slides.map((slide, index) => (
           <img
             key={slide.toyId}
             src={slide.picture}
             alt={slide.toyName}
-            className={`absolute inset-0 w-full h-full object-fit transition-all duration-700 rounded-b-xl ease-in-out ${
+            className={`absolute inset-0 w-full h-full object-fit transition-all duration-700 ease-in-out ${
               index === current
                 ? "opacity-100 scale-100"
                 : "opacity-0 scale-105"
