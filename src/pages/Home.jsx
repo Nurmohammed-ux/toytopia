@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useLoaderData } from "react-router";
 import ToyCard from "../components/ToyCard/ToyCard";
+import { TbBulb } from "react-icons/tb";
 
 const Home = () => {
   const data = useLoaderData();
@@ -34,8 +35,10 @@ const Home = () => {
           />
         ))}
         {/* Overlay Text */}
-        <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-          <h1 className="text-white text-3xl md:text-5xl font-bold">
+        <div className="absolute inset-0 bg-black/40 flex flex-col items-center justify-center">
+          <TbBulb size={60} className="text-[#ff4d4d] bg-white/20 p-1 rounded-full" />
+          <p className="text-white font-medium bg-white/20 px-6 py-2 rounded-full">Play And Learn</p>
+          <h1 className="text-white text-3xl md:text-5xl bg-white/20 font-bold px-6 py-2 rounded-full">
             Best Toys For Kids
           </h1>
         </div>
@@ -45,7 +48,7 @@ const Home = () => {
           onClick={() =>
             setCurrent(current === 0 ? slides.length - 1 : current - 1)
           }
-          className="absolute left-5 top-1/2 -translate-y-1/2 bg-white px-3 py-1 rounded"
+          className="absolute left-5 top-1/2 text-white -translate-y-1/2 bg-white/10 px-3 py-1 rounded"
         >
           ❮
         </button>
@@ -54,7 +57,7 @@ const Home = () => {
           onClick={() =>
             setCurrent(current === slides.length - 1 ? 0 : current + 1)
           }
-          className="absolute right-5 top-1/2 -translate-y-1/2 bg-white px-3 py-1 rounded"
+          className="absolute right-5 text-white top-1/2 -translate-y-1/2 bg-white/10 px-3 py-1 rounded"
         >
           ❯
         </button>

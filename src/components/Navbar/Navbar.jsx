@@ -1,6 +1,5 @@
 import { Link, NavLink } from "react-router";
 import { useState } from "react";
-import { FaClover } from "react-icons/fa6";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -40,18 +39,11 @@ const Navbar = () => {
           </button>
           {/* LOGO */}
           <Link to="/" className="text-2xl font-extrabold flex items-center">
-            <span className="bg-[#F9A51A] flex items-center text-black px-2 py-1 rounded">
-              T
-              <span>
-                <FaClover size={18} className="mt-2" />
-              </span>
-              y
+            <span className="bg-[#ff4d4d] flex items-center text-black px-2 py-1 rounded">
+              T<span className="pt-2 text-2xl">❤</span>y
             </span>
             <span className="text-gray-800 flex items-center">
-              T
-              <span>
-                <FaClover size={18} className="mt-2" />
-              </span>{" "}
+              T<span className="pt-2 text-2xl">❤</span>
               pia
             </span>
           </Link>
@@ -65,17 +57,10 @@ const Navbar = () => {
         <div className="flex items-center gap-4">
           <Link
             to="/login"
-            className="hover:bg-[#F9A51A] hover:border-[#F9A51A] px-4 py-2 border border-gray-300 font-semibold rounded transition"
+            className="hover:bg-[#ff4d4d] hover:border-[#ff4d4d] px-4 py-2 border border-gray-300 font-semibold rounded transition"
           >
             Login
           </Link>
-
-          {/* <Link
-            to="/register"
-            className="px-5 py-2 bg-[#F9A51A] text-black font-semibold rounded hover:bg-white hover:border hover:border-[#F9A51A] transition"
-          >
-            Register
-          </Link> */}
         </div>
       </div>
 
