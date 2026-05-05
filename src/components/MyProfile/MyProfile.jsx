@@ -1,9 +1,13 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import Swal from "sweetalert2";
 
 const MyProfile = () => {
   const { user, loading, updateUserInfo } = useContext(AuthContext);
+
+  useEffect(() => {
+    document.title = "ToyTopia | My Profile";
+  }, []);
 
   const handleUpdateProfile = (event) => {
     event.preventDefault();
@@ -83,7 +87,7 @@ const MyProfile = () => {
               className={`w-full py-4 mt-6 rounded-lg font-semibold text-black transition-all shadow-lg ${
                 loading
                   ? "bg-slate-400"
-                  : "bg-[#ff4d4d] hover:bg-white hover:border hover:border-[#ff4d4d] shadow-red-100"
+                  : "bg-[#ff4d4d] hover:bg-white hover:border hover:border-[#ff4d4d] hover:text-[#ff4d4d] shadow-red-100"
               }`}
             >
               {loading ? "Saving Changes..." : "Save Changes"}

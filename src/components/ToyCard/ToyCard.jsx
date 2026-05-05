@@ -34,7 +34,7 @@ const ToyCard = ({ toy }) => {
 
       <Link
         to={`/toy/${toyId}`}
-        className="block text-center mt-5 w-full bg-[#ff4d4d] py-2 rounded font-semibold"
+        className="block text-center mt-5 w-full bg-[#ff4d4d] hover:border hover:border-[#ff4d4d] hover:bg-white hover:text-[#ff4d4d] py-3 rounded font-semibold"
       >
         View More
       </Link>

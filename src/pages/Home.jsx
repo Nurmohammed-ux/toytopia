@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { useLoaderData } from "react-router";
 import ToyCard from "../components/ToyCard/ToyCard";
 import { TbBulb } from "react-icons/tb";
+import AOS from "aos";
+import 'aos/dist/aos.css';
 
 const Home = () => {
   const data = useLoaderData();
@@ -9,6 +11,11 @@ const Home = () => {
 
   useEffect(() => {
     document.title = "ToyTopia | Home";
+    AOS.init({
+      duration: 1000,
+      once: false,
+      mirror: true,
+    });
   }, []);
 
   const slides = data.slice(0, 3);
@@ -40,8 +47,13 @@ const Home = () => {
         ))}
         {/* Overlay Text */}
         <div className="absolute inset-0 bg-black/40 flex flex-col items-center justify-center">
-          <TbBulb size={60} className="text-[#ff4d4d] bg-white/20 p-1 rounded-full" />
-          <p className="text-white font-medium bg-white/20 px-6 py-2 rounded-full">Play And Learn</p>
+          <TbBulb
+            size={60}
+            className="text-[#ff4d4d] bg-white/20 p-1 rounded-full"
+          />
+          <p className="text-white font-medium bg-white/20 px-6 py-2 rounded-full">
+            Play And Learn
+          </p>
           <h1 className="text-white text-3xl md:text-5xl bg-white/20 font-bold px-6 py-2 rounded-full">
             Best Toys For Kids
           </h1>
@@ -69,11 +81,22 @@ const Home = () => {
 
       {/* 🔥 POPULAR TOYS */}
       <div className="mt-10 px-4 py-8">
-        <h2 className="text-2xl font-bold mb-6 text-center">Popular Toys</h2>
+        <h2
+          className="text-2xl font-bold mb-6 text-center"
+          data-aos="fade-down"
+        >
+          Popular Toys
+        </h2>
 
         <div className="grid md:grid-cols-3 gap-6">
-          {data.slice(0, 6).map((toy) => (
-            <ToyCard key={toy.toyId} toy={toy} />
+          {data.slice(0, 6).map((toy, index) => (
+            <div
+              key={toy.toyId}
+              data-aos="zoom-in"
+              data-aos-delay={index * 100}
+            >
+              <ToyCard toy={toy} />
+            </div>
           ))}
         </div>
       </div>

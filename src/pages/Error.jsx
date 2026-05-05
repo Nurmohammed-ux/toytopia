@@ -7,7 +7,7 @@ const Error = () => {
   }, []);
 
   return (
-    <div className="min-h-210 bg-[#1d3164] flex flex-col items-center justify-center px-6 text-center">
+    <div className="min-h-screen bg-[#1d3164] flex flex-col items-center justify-center px-6 text-center">
       {/* Visual Element: Large 404 with ToyTopia Styling */}
       <div className="relative">
         <h1 className="text-48 md:text-[288px] font-black text-slate-800 leading-none">

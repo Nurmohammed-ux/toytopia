@@ -95,7 +95,9 @@ const Navbar = () => {
         <div className="flex items-center gap-4">
           {/* Handle Loading and Persistence */}
           {loading ? (
-            <span className="loading loading-ring loading-md text-[#ff4d4d]"></span>
+            <div className="flex items-center justify-center">
+              <div className="w-6 h-6 border-4 border-gray-200 border-t-[#ff4d4d] rounded-full animate-spin"></div>
+            </div>
           ) : user ? (
             <div className="flex items-center gap-6">
               {/* Profile Image with Tooltip for Name */}
@@ -122,7 +124,7 @@ const Navbar = () => {
           ) : (
             <Link
               to="/auth/login"
-              className="hover:bg-[#ff4d4d] hover:text-white px-4 py-2 border border-gray-300 font-semibold rounded transition"
+              className="hover:bg-[#ff4d4d] hover:text-black px-4 py-2 border border-gray-300 font-semibold rounded transition"
             >
               Login
             </Link>

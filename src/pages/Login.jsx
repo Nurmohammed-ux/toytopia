@@ -9,6 +9,7 @@ const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
+  const [email, setEmail] = useState("");
   // console.log(user);
 
   useEffect(() => {
@@ -54,6 +55,8 @@ const Login = () => {
             <input
               type="email"
               name="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               placeholder="Username or Email"
               className="border-b-2 border-gray-400 font-medium focus:outline-none py-2 bg-transparent"
             />
@@ -91,12 +94,18 @@ const Login = () => {
                 Remember Me
               </label>
               {/* Forgot Password */}
-              <Link className="text-[#ff4d4d] underline">Forgot Password?</Link>
+              <Link
+                to={"/auth/forget-password"}
+                state={{ email }}
+                className="text-[#ff4d4d] underline"
+              >
+                Forgot Password?
+              </Link>
             </div>
             {/* Login Button */}
             <button
               type="submit"
-              className="mt-4 px-7 py-3 rounded-sm bg-[#ff4d4d] 
+              className="mt-4 px-7 py-3 rounded-sm bg-[#ff4d4d] hover:text-[#ff4d4d]
                          hover:bg-white hover:border hover:border-[#ff4d4d] 
                          text-black font-bold transition-all"
             >
@@ -105,7 +114,10 @@ const Login = () => {
           </fieldset>
           <p className="text-center py-4">
             Don't have an account?{" "}
-            <Link to={"/auth/register"} className="text-[#ff4d4d] underline">
+            <Link
+              to={"/auth/register"}
+              className="text-[#ff4d4d] font-medium underline"
+            >
               Create an account
             </Link>
           </p>

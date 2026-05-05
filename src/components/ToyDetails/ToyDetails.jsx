@@ -92,7 +92,7 @@ const ToyDetails = () => {
               </div>
               <button
                 type="submit"
-                className="w-full mt-6 py-4 text-xl hover:border hover:border-[#ff4d4d] bg-[#ff4d4d] text-black font-black rounded-xl hover:bg-white transition-all shadow-lg"
+                className="w-full mt-6 py-4 text-xl hover:border hover:border-[#ff4d4d] hover:text-[#ff4d4d] bg-[#ff4d4d] text-black font-black rounded-xl hover:bg-white transition-all shadow-lg"
               >
                 Try Now
               </button>

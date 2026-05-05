@@ -8,6 +8,8 @@ import PrivateRoute from "./PrivateRoute";
 import ToyDetails from "../components/ToyDetails/ToyDetails";
 import MyProfile from "../components/MyProfile/MyProfile";
 import Error from "../pages/Error";
+import MyToys from "../components/MyToys/MyToys";
+import ForgetPassword from "../components/ForgetPassword/ForgetPassword";
 
 const router = createBrowserRouter([
   {
@@ -58,10 +60,22 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "*",
-        element: <Error />
+        path: "/my-toys",
+        element: (
+          <PrivateRoute>
+            <MyToys />
+          </PrivateRoute>
+        ),
       },
+      {
+        path: "/auth/forget-password",
+        element: <ForgetPassword />
+      }
     ],
+  },
+  {
+    path: "*",
+    element: <Error />,
   },
 ]);
 export default router;

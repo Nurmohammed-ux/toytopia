@@ -165,7 +165,7 @@ const Register = () => {
             {/* Login Button */}
             <button
               type="submit"
-              className="mt-4 px-7 py-3 rounded-sm bg-[#ff4d4d] 
+              className="mt-4 px-7 py-3 rounded-sm bg-[#ff4d4d] hover:text-[#ff4d4d] 
                          hover:bg-white hover:border hover:border-[#ff4d4d] 
                          text-black font-bold transition-all"
             >
@@ -174,7 +174,7 @@ const Register = () => {
           </fieldset>
           <p className="text-center py-4">
             Already have an account?{" "}
-            <Link to={"/auth/login"} className="text-[#ff4d4d] underline">
+            <Link to={"/auth/login"} className="text-[#ff4d4d] font-medium underline">
               Login
             </Link>
           </p>
