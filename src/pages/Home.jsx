@@ -7,6 +7,10 @@ const Home = () => {
   const data = useLoaderData();
   const [current, setCurrent] = useState(0);
 
+  useEffect(() => {
+    document.title = "ToyTopia | Home";
+  }, []);
+
   const slides = data.slice(0, 3);
 
   // Auto slide

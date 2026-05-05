@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Link } from "react-router";
 import { AuthContext } from "../context/AuthContext";
@@ -8,6 +8,10 @@ const Register = () => {
   const { createUser } = useContext(AuthContext);
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+
+  useEffect(() => {
+    document.title = "ToyTopia | Register";
+  }, []);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -22,7 +26,7 @@ const Register = () => {
     //   createUser,
     //   firstName,
     //   lastName,
-    //   photo, 
+    //   photo,
     //   email,
     //   password,
     //   confirmPassword,

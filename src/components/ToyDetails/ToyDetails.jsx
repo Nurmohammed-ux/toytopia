@@ -1,6 +1,6 @@
 import { useLoaderData, useParams } from "react-router";
 import Swal from "sweetalert2";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { AuthContext } from "../../context/AuthContext";
 
 const ToyDetails = () => {
@@ -20,6 +20,10 @@ const ToyDetails = () => {
     availableQuantity,
   } = toy;
   //   console.log(toy, numId)
+
+  useEffect(() => {
+    document.title = "ToyTopia | Toy Details";
+  }, []);
 
   const handleTryNow = (e) => {
     e.preventDefault();
@@ -56,7 +60,9 @@ const ToyDetails = () => {
             <p className="text-xl font-medium mt-2">
               Manufacturer : {sellerName}
             </p>
-            <p className="text-slate-700 mt-4 font-normal leading-relaxed">{description}</p>
+            <p className="text-slate-700 mt-4 font-normal leading-relaxed">
+              {description}
+            </p>
           </div>
         </div>
 

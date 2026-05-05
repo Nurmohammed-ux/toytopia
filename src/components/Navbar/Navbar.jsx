@@ -5,29 +5,48 @@ import Swal from "sweetalert2";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
-  const { user, logOut } = useContext(AuthContext);
+  // Destructure 'loading' from your AuthContext
+  const { user, logOut, loading } = useContext(AuthContext);
+
   const navLinks = (
     <>
       <NavLink
         to="/"
-        className={({ isActive }) => (isActive ? "text-primary font-bold" : "")}
+        className={({ isActive }) =>
+          isActive ? "text-[#ff4d4d] font-bold" : ""
+        }
       >
         Home
       </NavLink>
-
-      <NavLink
-        to="/my_profile"
-        className={({ isActive }) => (isActive ? "text-primary font-bold" : "")}
-      >
-        My Profile
-      </NavLink>
-
       <NavLink
         to="/toys"
-        className={({ isActive }) => (isActive ? "text-primary font-bold" : "")}
+        className={({ isActive }) =>
+          isActive ? "text-[#ff4d4d] font-bold" : ""
+        }
       >
         All Toys
       </NavLink>
+      {user && (
+        <>
+          <NavLink
+            to="/my_profile"
+            className={({ isActive }) =>
+              isActive ? "text-[#ff4d4d] font-bold" : ""
+            }
+          >
+            My Profile
+          </NavLink>
+          {/* Example Extra Route: My Toys */}
+          <NavLink
+            to="/my-toys"
+            className={({ isActive }) =>
+              isActive ? "text-[#ff4d4d] font-bold" : ""
+            }
+          >
+            My Toys
+          </NavLink>
+        </>
+      )}
     </>
   );
 
@@ -45,7 +64,7 @@ const Navbar = () => {
       .catch((error) => {
         Swal.fire({
           icon: "error",
-          title: "Registration Failed",
+          title: "Logout Failed",
           text: error.message,
           confirmButtonColor: "#ff4d4d",
         });
@@ -53,42 +72,57 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="w-full bg-white shadow-md px-4 md:px-10 py-4">
+    <nav className="w-full bg-white shadow-md px-4 md:px-10 py-4 sticky top-0 z-50">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-10">
-          {/* MOBILE MENU BUTTON */}
           <button onClick={() => setOpen(!open)} className="lg:hidden text-2xl">
             ☰
           </button>
-          {/* LOGO */}
           <Link to="/" className="text-2xl font-extrabold flex items-center">
             <span className="bg-[#ff4d4d] flex items-center text-black px-2 py-1 rounded">
               T<span className="pt-2 text-2xl">❤</span>y
             </span>
             <span className="text-gray-800 flex items-center">
-              T<span className="pt-2 text-2xl">❤</span>
-              pia
+              T<span className="pt-2 text-2xl">❤</span>pia
             </span>
           </Link>
         </div>
-        {/* DESKTOP MENU */}
+
         <ul className="hidden lg:flex items-center gap-8 font-medium">
           {navLinks}
         </ul>
 
-        {/* RIGHT BUTTONS */}
         <div className="flex items-center gap-4">
-          {user ? (
-            <button
-              onClick={handleLogout}
-              className="hover:bg-[#ff4d4d] hover:border-[#ff4d4d] px-4 py-2 border border-gray-300 font-semibold rounded transition"
-            >
-              Log Out
-            </button>
+          {/* Handle Loading and Persistence */}
+          {loading ? (
+            <span className="loading loading-ring loading-md text-[#ff4d4d]"></span>
+          ) : user ? (
+            <div className="flex items-center gap-6">
+              {/* Profile Image with Tooltip for Name */}
+              <div className="relative flex flex-col items-center group">
+                <img
+                  src={user?.photoURL}
+                  alt="Profile"
+                  className="w-10 h-10 rounded-full border-2 border-[#ff4d4d] object-cover cursor-pointer"
+                />
+                <div className="absolute top-full mt-2 flex-col items-center hidden group-hover:flex">
+                  <div className="w-3 h-3 -mb-2 rotate-45 bg-[#10182b]"></div>
+                  <span className="relative z-10 p-2 text-xs leading-none text-white whitespace-no-wrap bg-[#10182b] shadow-lg rounded-md">
+                    {user?.displayName || "User"}
+                  </span>
+                </div>
+              </div>
+              <button
+                onClick={handleLogout}
+                className="hover:bg-[#ff4d4d] hover:text-white px-4 py-2 border border-gray-300 font-semibold rounded transition"
+              >
+                Log Out
+              </button>
+            </div>
           ) : (
             <Link
               to="/auth/login"
-              className="hover:bg-[#ff4d4d] hover:border-[#ff4d4d] px-4 py-2 border border-gray-300 font-semibold rounded transition"
+              className="hover:bg-[#ff4d4d] hover:text-white px-4 py-2 border border-gray-300 font-semibold rounded transition"
             >
               Login
             </Link>
@@ -96,7 +130,6 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* MOBILE MENU */}
       {open && (
         <div className="lg:hidden mt-4 border-t border-dotted border-gray-400 pt-4">
           <ul className="flex flex-col gap-4 font-medium">{navLinks}</ul>

@@ -1,6 +1,11 @@
+import { useEffect } from "react";
 import { Link } from "react-router";
 
 const Error = () => {
+  useEffect(() => {
+    document.title = "ToyTopia | Error";
+  }, []);
+
   return (
     <div className="min-h-210 bg-[#1d3164] flex flex-col items-center justify-center px-6 text-center">
       {/* Visual Element: Large 404 with ToyTopia Styling */}
