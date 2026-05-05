@@ -6,6 +6,8 @@ import Login from "../pages/Login";
 import Register from "../pages/Register";
 import PrivateRoute from "./PrivateRoute";
 import ToyDetails from "../components/ToyDetails/ToyDetails";
+import MyProfile from "../components/MyProfile/MyProfile";
+import Error from "../pages/Error";
 
 const router = createBrowserRouter([
   {
@@ -46,6 +48,18 @@ const router = createBrowserRouter([
             element: <Register />,
           },
         ],
+      },
+      {
+        path: "/my_profile",
+        element: (
+          <PrivateRoute>
+            <MyProfile />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "*",
+        element: <Error />
       },
     ],
   },

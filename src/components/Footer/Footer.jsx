@@ -58,7 +58,10 @@ const Footer = () => {
             >
               Home
             </Link>
-            <Link className="hover:text-white hover:translate-x-1 transition-all cursor-pointer">
+            <Link
+              to={"/my_profile"}
+              className="hover:text-white hover:translate-x-1 transition-all cursor-pointer"
+            >
               My Profile
             </Link>
             <Link
@@ -135,8 +138,8 @@ const Footer = () => {
           </h3>
           <p className="text-sm mb-6 leading-relaxed">
             Join the ToyTopia family for{" "}
-            <span className="text-white font-bold ml-1">10% off</span> your first
-            order!
+            <span className="text-white font-bold ml-1">10% off</span> your
+            first order!
           </p>
 
           {/* Custom Newsletter Input */}

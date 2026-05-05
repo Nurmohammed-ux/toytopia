@@ -8,26 +8,26 @@ const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
   const navLinks = (
     <>
-      <li>
-        <NavLink
-          to="/"
-          className={({ isActive }) =>
-            isActive ? "text-primary font-bold" : ""
-          }
-        >
-          Home
-        </NavLink>
-      </li>
-      <li>
-        <NavLink
-          to="/toys"
-          className={({ isActive }) =>
-            isActive ? "text-primary font-bold" : ""
-          }
-        >
-          All Toys
-        </NavLink>
-      </li>
+      <NavLink
+        to="/"
+        className={({ isActive }) => (isActive ? "text-primary font-bold" : "")}
+      >
+        Home
+      </NavLink>
+
+      <NavLink
+        to="/my_profile"
+        className={({ isActive }) => (isActive ? "text-primary font-bold" : "")}
+      >
+        My Profile
+      </NavLink>
+
+      <NavLink
+        to="/toys"
+        className={({ isActive }) => (isActive ? "text-primary font-bold" : "")}
+      >
+        All Toys
+      </NavLink>
     </>
   );
 

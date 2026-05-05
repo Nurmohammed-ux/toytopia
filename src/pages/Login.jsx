@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../context/AuthContext";
@@ -10,6 +10,10 @@ const Login = () => {
   const location = useLocation();
   const navigate = useNavigate();
   // console.log(user);
+
+  useEffect(() => {
+    document.title = "ToyTopia | Login";
+  }, []);
 
   const handleLogin = (event) => {
     event.preventDefault();
