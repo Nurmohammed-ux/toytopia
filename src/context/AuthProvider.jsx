@@ -31,7 +31,9 @@ const AuthProvider = ({ children }) => {
 
   const updateUserInfo = (profile) => {
     setLoading(true);
-    return updateProfile(auth.currentUser, profile);
+    return updateProfile(auth.currentUser, profile).finally(() =>
+      setLoading(false),
+    );
   };
 
   const signInWithGoogle = () => {
