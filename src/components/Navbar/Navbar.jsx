@@ -72,8 +72,8 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="w-full bg-white shadow-md px-4 md:px-10 py-4 sticky top-0 z-50">
-      <div className="flex items-center justify-between">
+    <nav className="w-full bg-white shadow-md px-4 md:px-10 py-6 sticky top-0 z-50">
+      <div className="flex flex-col md:flex-row gap-6 md:gap-0 items-center justify-between">
         <div className="flex items-center gap-10">
           <button onClick={() => setOpen(!open)} className="lg:hidden text-2xl">
             ☰

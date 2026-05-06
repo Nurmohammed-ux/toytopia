@@ -4,8 +4,8 @@ import { useContext, useEffect } from "react";
 import { AuthContext } from "../../context/AuthContext";
 
 const ToyDetails = () => {
-  const toys = useLoaderData(); // Assuming you use a loader to fetch toy data
-  const { user } = useContext(AuthContext);
+  const toys = useLoaderData();
+  const { user, addToMyToys } = useContext(AuthContext);
   const { id } = useParams();
   const numId = Number(id);
 
@@ -36,6 +36,20 @@ const ToyDetails = () => {
     event.target.reset();
   };
 
+  const handleAddToMyToys = () => {
+    const success = addToMyToys(toy);
+    if (success) {
+      Swal.fire({
+        icon: "success",
+        title: "Added!",
+        text: `${toy.toyName} is now in your collection.`,
+        confirmButtonColor: "#ff4d4d",
+      });
+    } else {
+      Swal.fire("Note", "This toy is already in your collection.", "info");
+    }
+  };
+
   return (
     <div className="max-w-7xl mx-auto mt-8 p-6 lg:py-12">
       <div className="flex flex-col gap-12 items-center">
@@ -44,7 +58,7 @@ const ToyDetails = () => {
           <img
             src={picture}
             alt={toyName}
-            className="rounded-lg shadow-2xl w-full object-cover md:h-150"
+            className="rounded-lg shadow-2xl w-full object-fit md:h-150"
           />
           <div>
             <h1 className="text-4xl font-black mt-8 mb-6 text-slate-900">
@@ -64,6 +78,12 @@ const ToyDetails = () => {
               {description}
             </p>
           </div>
+          <button
+            onClick={handleAddToMyToys}
+            className="mt-6 py-4 px-8 text-xl hover:border hover:border-[#ff4d4d] hover:text-[#ff4d4d] bg-[#ff4d4d] text-black font-black rounded-lg hover:bg-white transition-all shadow-lg"
+          >
+            Add to My Toys
+          </button>
         </div>
 
         {/* Try Now Form */}
@@ -92,7 +112,7 @@ const ToyDetails = () => {
               </div>
               <button
                 type="submit"
-                className="w-full mt-6 py-4 text-xl hover:border hover:border-[#ff4d4d] hover:text-[#ff4d4d] bg-[#ff4d4d] text-black font-black rounded-xl hover:bg-white transition-all shadow-lg"
+                className="w-full mt-6 py-4 text-xl hover:border hover:border-[#ff4d4d] hover:text-[#ff4d4d] bg-[#ff4d4d] text-black font-black rounded-lg hover:bg-white transition-all shadow-lg"
               >
                 Try Now
               </button>
