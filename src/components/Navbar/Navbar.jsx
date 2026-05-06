@@ -116,7 +116,7 @@ const Navbar = () => {
               </div>
               <button
                 onClick={handleLogout}
-                className="hover:bg-[#ff4d4d] hover:text-white px-4 py-2 border border-gray-300 font-semibold rounded transition"
+                className="hover:bg-[#ff4d4d] text-[#ff4d4d] hover:text-black px-4 py-2 border border-gray-300 font-semibold rounded transition"
               >
                 Log Out
               </button>
@@ -124,7 +124,7 @@ const Navbar = () => {
           ) : (
             <Link
               to="/auth/login"
-              className="hover:bg-[#ff4d4d] hover:text-black px-4 py-2 border border-gray-300 font-semibold rounded transition"
+              className="hover:bg-[#ff4d4d] text-[#ff4d4d] hover:text-black px-4 py-2 border border-gray-300 font-semibold rounded transition"
             >
               Login
             </Link>

@@ -25,15 +25,15 @@ const ToyDetails = () => {
     document.title = "ToyTopia | Toy Details";
   }, []);
 
-  const handleTryNow = (e) => {
-    e.preventDefault();
+  const handleTryNow = (event) => {
+    event.preventDefault();
     Swal.fire({
       icon: "success",
       title: "Request Sent!",
       text: `We've received your request to try ${toyName}. Check your email soon!`,
       confirmButtonColor: "#ff4d4d",
     });
-    e.target.reset();
+    event.target.reset();
   };
 
   return (

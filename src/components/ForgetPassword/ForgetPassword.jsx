@@ -1,10 +1,10 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useLocation } from "react-router";
-// import { sendPasswordResetEmail } from "firebase/auth";
-// import { auth } from "../firebase/firebase.config";
 import Swal from "sweetalert2";
+import { AuthContext } from "../../context/AuthContext";
 
 const ForgetPassword = () => {
+  const { forgetPassword } = useContext(AuthContext);
   const location = useLocation();
   const [email, setEmail] = useState(location.state?.email || "");
 
@@ -20,26 +20,26 @@ const ForgetPassword = () => {
       return;
     }
 
-    // sendPasswordResetEmail(auth, email)
-    //   .then(() => {
-    //     Swal.fire({
-    //       icon: "success",
-    //       title: "Reset Link Sent!",
-    //       text: "Check your email to reset your password.",
-    //       showConfirmButton: false,
-    //       timer: 3000,
-    //     });
-    //     setTimeout(() => {
-    //       window.location.href = "https://mail.google.com";
-    //     }, 2000);
-    //   })
-    //   .catch((error) => {
-    //     Swal.fire({
-    //       icon: "error",
-    //       title: "Error",
-    //       text: error.message,
-    //     });
-    //   });
+    forgetPassword(email)
+      .then(() => {
+        Swal.fire({
+          icon: "success",
+          title: "Reset Link Sent!",
+          text: "Check your email to reset your password.",
+          showConfirmButton: false,
+          timer: 3000,
+        });
+        setTimeout(() => {
+          window.location.href = "https://mail.google.com";
+        }, 2000);
+      })
+      .catch((error) => {
+        Swal.fire({
+          icon: "error",
+          title: "Error",
+          text: error.message,
+        });
+      });
   };
 
   return (
