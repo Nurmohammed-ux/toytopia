@@ -17,7 +17,15 @@ const googleProvider = new GoogleAuthProvider();
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [myToys, setMyToys] = useState([]);
+  const [myToys, setMyToys] = useState(() => {
+    const savedToys = localStorage.getItem("myToysCollection");
+    return savedToys ? JSON.parse(savedToys) : [];
+  });
+
+  useEffect(() => {
+    (localStorage.setItem("myToysCollection", JSON.stringify(myToys)),
+      [myToys]);
+  });
 
   const createUser = (email, password) => {
     setLoading(true);
@@ -31,9 +39,11 @@ const AuthProvider = ({ children }) => {
 
   const updateUserInfo = (profile) => {
     setLoading(true);
-    return updateProfile(auth.currentUser, profile).finally(() =>
-      setLoading(false),
-    );
+    return updateProfile(auth.currentUser, profile)
+      .then(() => {
+        setUser({ ...auth.currentUser, ...profile });
+      })
+      .finally(() => setLoading(false));
   };
 
   const signInWithGoogle = () => {

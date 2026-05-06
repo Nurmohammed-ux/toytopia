@@ -26,6 +26,14 @@ const Navbar = () => {
       >
         All Toys
       </NavLink>
+      <NavLink
+        to="/policy"
+        className={({ isActive }) =>
+          isActive ? "text-[#ff4d4d] font-bold" : ""
+        }
+      >
+        Policy
+      </NavLink>
       {user && (
         <>
           <NavLink
@@ -36,7 +44,6 @@ const Navbar = () => {
           >
             My Profile
           </NavLink>
-          {/* Example Extra Route: My Toys */}
           <NavLink
             to="/my-toys"
             className={({ isActive }) =>

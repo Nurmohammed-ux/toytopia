@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import { AuthContext } from "../context/AuthContext";
 import Swal from "sweetalert2";
 
@@ -8,6 +8,7 @@ const Register = () => {
   const { createUser } = useContext(AuthContext);
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     document.title = "ToyTopia | Register";
@@ -65,8 +66,8 @@ const Register = () => {
     }
 
     createUser(email, password)
-      .then((result) => {
-        console.log(result.user);
+      .then(() => {
+        // console.log(result.user);
         Swal.fire({
           icon: "success",
           title: "Account Created!",
@@ -75,6 +76,7 @@ const Register = () => {
           timer: 2000,
         });
         form.reset();
+        navigate("/");
       })
       .catch((error) => {
         console.log(error.message);
@@ -174,7 +176,10 @@ const Register = () => {
           </fieldset>
           <p className="text-center py-4">
             Already have an account?{" "}
-            <Link to={"/auth/login"} className="text-[#ff4d4d] font-medium underline">
+            <Link
+              to={"/auth/login"}
+              className="text-[#ff4d4d] font-medium underline"
+            >
               Login
             </Link>
           </p>
