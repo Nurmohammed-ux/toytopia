@@ -39,27 +39,48 @@ Hosting: Firebase
 
 toytopia/
 
-├─ src/
+├─ src/ 
+
 │  ├─ assets
+
 │  ├─ components/
+
 │  │  ├─ Footer
+
 │  │  ├─ ForgetPassword
+
 │  │  ├─ MyProfile
+
 │  │  ├─ MyToys
+
 │  │  ├─ Navbar
+
 │  │  ├─ SocialLogin
+
 │  │  ├─ ToyCard
-│  │  └─ ToyDetails/
+
+│  │  └─ ToyDetails
+
 │  ├─ context
+
 │  ├─ firebase
+
 │  ├─ layouts
+
 │  ├─ pages
+
 │  ├─ routes
+
 │  ├─ App.css
+
 │  ├─ App.jsx
+
 │  ├─ index.css
+
 │  └─ main.jsx
+
 ├─ index.html
+
 ├── package.json
 
 
@@ -70,7 +91,7 @@ toytopia/
    Installation
    Clone the repository:
 
-2. git clone https://github.com/yourusername/toystore.git
+2. git clone https://github.com/yourusername/toytopia.git
    cd toystore
    Install dependencies:
 
