@@ -1,7 +1,6 @@
 🧸 ToyTopia
 
-A modern, responsive toy store website built with React and Tailwind CSS. This project showcases a beautiful e-commerce frontend for a toy store, featuring an interactive slider, product cards, and contact information.
-Since ToyTopia is for kids/parents, try to keep the language warm but trustworthy. Use words like "Verified," "Premium," and "Safety" alongside fun words like "Joy," "Discovery," and "Playtime."
+ToyTopia is a vibrant, community-driven marketplace designed to connect families with local toy artisans and sellers. Beyond a simple storefront, ToyTopia empowers parents to discover age-appropriate, safe, and unique playthings while supporting small businesses. With features like personalized toy collections, direct manufacturer inquiries, and community-verified ratings, we make finding the next favorite toy a playful and secure experience for every family
 
 * React Tailwind CSS Vite
 
